@@ -1,0 +1,11 @@
+{
+	"presets": [
+		"env",
+		"stage-0"
+	],
+	"plugins": [
+		"transform-regenerator",
+		"transform-runtime",
+		["babel-plugin-inline-import", { "extensions": [".graphql", ".env"] }]
+	]
+}

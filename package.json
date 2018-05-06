@@ -1,0 +1,65 @@
+{
+  "name": "syschurch-backend",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Nícholas André",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nicholasio/syschurch-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholasio/syschurch-backend.git"
+  },
+  "homepage": "https://github.com/nicholasio/syschurch-backend#readme",
+  "scripts": {
+    "start": "pm2 start dist/index.js --name=syschurch-backend",
+    "stop": "pm2 stop nugg-backend",
+    "logs": "pm2 logs nugg-backend",
+    "transpile": "babel ./src -d ./dist --copy-files",
+    "transpile:watch": "npm run transpile -- --watch",
+    "watch": "npm run start -- --watch",
+    "lint": "eslint src migrations seeders",
+    "format": "eslint --fix src migrations seeders"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-inline-import": "^2.0.6",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "es6-promisify": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "express": "^4.16.3",
+    "husky": "^1.0.0-rc.2",
+    "lint-staged": "^7.0.5",
+    "pm2": "^2.10.3",
+    "prettier": "^1.12.1",
+    "winston": "^2.4.2",
+    "winston-console-formatter": "^1.0.0-beta.3"
+  }
+}
