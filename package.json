@@ -14,8 +14,8 @@
   "homepage": "https://github.com/nicholasio/syschurch-backend#readme",
   "scripts": {
     "start": "pm2 start dist/index.js --name=syschurch-backend",
-    "stop": "pm2 stop nugg-backend",
-    "logs": "pm2 logs nugg-backend",
+    "stop": "pm2 stop syschurch-backend",
+    "logs": "pm2 logs syschurch-backend",
     "transpile": "babel ./src -d ./dist --copy-files",
     "transpile:watch": "npm run transpile -- --watch",
     "watch": "npm run start -- --watch",
